@@ -10,6 +10,7 @@ import Articles from "./pages/Articles";
 import Registration from "./pages/Registration";
 import Movies from "./pages/Movies";
 import Movie from "./pages/Movie";
+import UserList from "./pages/UserList";
 import "./App.css";
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Registration />
+          </Route>
+          <Route path="/user-list">
+            <UserList />
           </Route>
           <Route path="/movies/:movieId">
             <Movie />
