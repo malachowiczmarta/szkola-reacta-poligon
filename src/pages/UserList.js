@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import User from "./User";
+import { Link } from "react-router-dom";
 
 function UserList() {
   const [users, setUsers] = useState([]);
@@ -23,9 +24,18 @@ function UserList() {
     <div className="UserList">
       {isLoading && <p>Loading...</p>}
       {hasError && <p>An Error has occured</p>}
-      {users.map((user) => (
-        <User userInfo={user} />
-      ))}
+
+      <ol>
+        {users.map((user) => (
+          <li>
+            <h2>
+              <Link to={`/user/${user.id}`}>
+                {user.name.first + " " + user.name.last}
+              </Link>
+            </h2>
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }
