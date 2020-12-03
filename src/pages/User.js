@@ -1,15 +1,23 @@
 import React from "react";
+import Moment from "react-moment";
 
 function User({ userInfo }) {
+  const { registered, name, id, location, email, picture } = userInfo;
+
+  const dateToFormat = registered.date;
+
   return (
     <>
-      <h2>{userInfo.name.first + " " + userInfo.name.last}</h2>
-      <ul key={userInfo.id.value}>
-        <li>{userInfo.location.city + " " + userInfo.location.street.name}</li>
-        <li>{userInfo.email}</li>
-        <li>{userInfo.registered.date}</li>
+      <ul key={id.value}>
+        <li>{name.first || "First name not provided"}</li>
+        <li>{name.last || "Last name not provided"}</li>
+        <li>{location.city + " " + location.street.name}</li>
+        <li>{email}</li>
+        <li>
+          <Moment>{dateToFormat}</Moment>
+        </li>
       </ul>
-      <img src={userInfo.picture.medium} alt="profile" />
+      <img src={picture.medium} alt="profile" />
     </>
   );
 }

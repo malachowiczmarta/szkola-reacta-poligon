@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import {
-  Link
-} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import Logo from './Logo';
-import Menu from './Menu';
+import Logo from "./Logo";
+import Menu from "./Menu";
 // import NavLink from './NavLink';
 
 function Header() {
@@ -14,10 +12,21 @@ function Header() {
       <Logo />
       <Menu>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/articles">Articles</Link></li>
-          <li><Link to="/movies">Movies</Link></li>
-          <li><Link to="/register">Register</Link></li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/articles">Articles</Link>
+          </li>
+          <li>
+            <Link to="/movies">Movies</Link>
+          </li>
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
+          <li>
+            <Link to="/user-list">User List</Link>
+          </li>
         </ul>
       </Menu>
     </div>
